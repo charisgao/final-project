@@ -56,15 +56,14 @@ def results():
 
     # HOTEL
     PARAMETERS = {"term": "hotels", "limit" : 50, "location": request.form["location"]}
-    hotel_response = requests.get(
-        url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
+    hotel_response = requests.get(url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
     hotel_data = hotel_response.json()
 
     hotels = hotel_data["businesses"]
 
     hotel_nums = []
     for day in range(int(days)):
-        hotel_nums.append(model.random_num(restaurants))
+        hotel_nums.append(model.random_num(hotels))
     
     hotel_list = []
     for number in range(int(days)):
@@ -78,8 +77,7 @@ def results():
 
     # THINGS TO DO
     PARAMETERS = {"term": "things to do", "limit" : 50, "location": request.form["location"]}
-    thingstodo_response = requests.get(
-        url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
+    thingstodo_response = requests.get(url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
     thingstodo_data = thingstodo_response.json()
 
     thingstodo = thingstodo_data["businesses"]
@@ -87,7 +85,7 @@ def results():
     thingstodo_nums = []
     for day in range(int(days)):
         for num in range(2):
-            thingstodo_nums.append(model.random_num(restaurants))
+            thingstodo_nums.append(model.random_num(thingstodo))
     
     thingstodo_list = []
     for number in range(int(days)):

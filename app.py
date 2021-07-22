@@ -26,14 +26,25 @@ def index():
 
 @app.route('/results', methods=["GET", "POST"])
 def results():
-    # Define the parameters
+    # RESTAURANT
     PARAMETERS = {"term" : "restaurants", "location" : request.form["location"]}
     # Make a request to the Yelp API
-    response = requests.get(url = ENDPOINT, params = PARAMETERS, headers = HEADERS)
+    restaurant_response = requests.get(url = ENDPOINT, params = PARAMETERS, headers = HEADERS)
     # Convert a JSON string to a dictionary
-    business_data = response.json()
+    restaurant_data = restaurant_response.json()
 
-    data = business_data["businesses"]
-    coordinates = model.coordinates(data)
+    restaurants = restaurant_data["businesses"]
+    num = model.random_num(restaurants)
+    coordinates = model.coordinates(restaurants, num)
 
-    return render_template("results.html", data = data, coordinates = coordinates, google_key = GOOGLE_API)
+    # HOTEL
+    PARAMETERS = {"term" : "hotels", "location" : request.form["location"]}
+    hotel_response = requests.get(url = ENDPOINT, params = PARAMETERS, headers = HEADERS)
+    hotel_data = hotel_response.json()
+
+    #THINGS TO DO
+    PARAMETERS = {"term" : "things to do", "location" : request.form["location"]}
+    thingstodo_response = requests.get(url = ENDPOINT, params = PARAMETERS, headers = HEADERS)
+    thingstodo_data = thingstodo_response.json()
+
+    return render_template("results.html", data = restaurants, coordinates = coordinates, google_key = GOOGLE_API)

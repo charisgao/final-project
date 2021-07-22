@@ -32,7 +32,7 @@ def results():
     response = requests.get(url = ENDPOINT, params = PARAMETERS, headers = HEADERS)
     # Convert a JSON string to a dictionary
     business_data = response.json()
-    
+
     data = business_data["businesses"]
     coordinates = model.coordinates(data)
 

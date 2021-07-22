@@ -1,7 +1,7 @@
 import random
 
 def random_num(data):
-    return random.randint(0, len(data))
+    return random.randint(0, len(data)-1)
 
 def name(data, num):
     return data[num]["name"]

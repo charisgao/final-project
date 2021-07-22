@@ -16,11 +16,10 @@
 <body>
     <h1>Data!</h1>
     <ul>
-        {% for biz in data %}
-        <li>{{ biz.name }} - {{ biz.location.display_address }}</li>
+        {% for biz in restaurants %}
+        <li>{{ biz.name }}</li>
         {% endfor %}
     </ul>
-    <p> {{restaurant1}}</p>
     <div id="map">
     </div>
 

@@ -4,10 +4,10 @@
         <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
     </head>
     <body>
-        <h1>Welcome to GifBot!</h1>
-        <p>What kind of gif would you like to see?</p>
-        <form method="post" action="/yourgif">
-            <input type="text" name="gifchoice" placeholder="What kind of gif do you want to see?"/>
+        <h1>Welcome!</h1>
+        <form method="post" action="/results">
+            <input type="text" name="location" placeholder="Where to?"/>
+            <input type="text" name="days" placeholder="How many days?"/>
             <input type="submit" value="Submit"/>
         </form>
     </body>

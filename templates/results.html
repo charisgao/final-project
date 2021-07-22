@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
+    <style>
+        #map {
+            height: 500px;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Data!</h1>
+    <ul>
+        {% for biz in data %}
+        <li>{{ biz.name }} - {{ biz.location.display_address }}</li>
+        {% endfor %}
+    </ul>
+    <p> {{coordinates}}</p>
+    <div id="map">
+    </div>
+
+    <script>
+        function initMap(){
+            // var location = {lat : {{ coordinates.latitude }} , lng : {{ coordinates.longitude }} };
+            var location = {lat : 40.35025633302583 , lng : -74.659846}
+            var map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 4, 
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+        
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_key }}&callback=initMap">
+    </script>
+</body>
+
+</html>

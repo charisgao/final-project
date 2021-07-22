@@ -20,16 +20,16 @@
         <li>{{ biz.name }} - {{ biz.location.display_address }}</li>
         {% endfor %}
     </ul>
-    <p> {{coordinates}}</p>
+    <p> {{restaurant1}}</p>
     <div id="map">
     </div>
 
     <script>
         function initMap(){
-            // var location = {lat : {{ coordinates.latitude }} , lng : {{ coordinates.longitude }} };
-            var location = {lat : 40.35025633302583 , lng : -74.659846}
+            let restaurants = JSON.parse('{{ restaurants | tojson }}');
+            var location = {lat : restaurants[0]["coordinates"]["latitude"], lng : restaurants[0]["coordinates"]["longitude"]};
             var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 4, 
+                zoom: 12, 
                 center: location
             });
             var marker = new google.maps.Marker({

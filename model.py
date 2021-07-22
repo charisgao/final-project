@@ -7,7 +7,7 @@ def name(data, num):
     return data[num]["name"]
 
 def picture(data, num):
-    return data[num][""]
+    return data[num]["image_url"]
 
 def coordinates(data, num):
     return data[num]["coordinates"] #latitude, longitude

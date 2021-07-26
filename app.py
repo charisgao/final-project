@@ -39,10 +39,7 @@ def results():
 
     restaurants = restaurant_data["businesses"]
 
-    restaurant_nums = []
-    for day in range(int(days)):
-        for num in range(3):
-            restaurant_nums.append(model.random_num(restaurants))
+    restaurant_nums = model.random_num(restaurants, int(days) * 3)
 
     restaurant_list = []
     for number in range(3 * int(days)):
@@ -61,9 +58,7 @@ def results():
 
     hotels = hotel_data["businesses"]
 
-    hotel_nums = []
-    for day in range(int(days)):
-        hotel_nums.append(model.random_num(hotels))
+    hotel_nums = model.random_num(hotels, int(days) * 1)
     
     hotel_list = []
     for number in range(int(days)):
@@ -82,10 +77,7 @@ def results():
 
     thingstodo = thingstodo_data["businesses"]
 
-    thingstodo_nums = []
-    for day in range(int(days)):
-        for num in range(2):
-            thingstodo_nums.append(model.random_num(thingstodo))
+    thingstodo_nums = model.random_num(thingstodo, int(days) * 2)
     
     thingstodo_list = []
     for number in range(2 * int(days)):

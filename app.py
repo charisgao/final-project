@@ -88,7 +88,7 @@ def results():
             thingstodo_nums.append(model.random_num(thingstodo))
     
     thingstodo_list = []
-    for number in range(int(days)):
+    for number in range(2 * int(days)):
             thingstodo_list.append(
                 {
                     "name": model.name(thingstodo, thingstodo_nums[number]),

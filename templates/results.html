@@ -15,19 +15,19 @@
 
 <body>
     <h1>Data!</h1>
-    <h2>Restaurants</h2>
+    <h2 id = "restHeader">Restaurants</h2>
     <ul>
         {% for biz in restaurants %}
         <li>{{ biz["name"] }}</li>
         {% endfor %}
     </ul>
-    <h2>Hotels</h2>
+    <h2 id = "hotelsHeader">Hotels</h2>
     <ul>
         {% for biz in hotels %}
         <li>{{ biz["name"] }}</li>
         {% endfor %}
     </ul>
-    <h2>Things To Do</h2>
+    <h2 id = "thingsHeader">Things To Do</h2>
     <ul>
         {% for biz in thingstodo %}
         <li>{{ biz["name"] }}</li>

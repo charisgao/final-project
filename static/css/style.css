@@ -45,3 +45,15 @@ input[type=submit]:hover{
     background-color: #CBF3F0;
     padding: 10%;
 }
+
+
+/*results.html styling starts below */
+#restHeader{
+    color: #FF9F1C;
+}
+#hotelsHeader{
+    color: #4A8FE7;
+}
+#thingsHeader{
+    color: #2EC4B6;
+}

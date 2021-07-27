@@ -89,4 +89,4 @@ def results():
                 }
             )
 
-    return render_template("results.html", days=days, restaurants=restaurant_list, hotels=hotel_list, thingstodo=thingstodo_list, google_key=GOOGLE_API)
+    return render_template("results.html", days=int(days), restaurants=restaurant_list, hotels=hotel_list, thingstodo=thingstodo_list, google_key=GOOGLE_API)

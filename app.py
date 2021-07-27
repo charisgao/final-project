@@ -36,7 +36,7 @@ def results():
     restaurant_response = requests.get(url=ENDPOINT, params=PARAMETERS, headers=HEADERS)
     # Convert a JSON string to a dictionary
     restaurant_data = restaurant_response.json()
-
+    
     restaurants = restaurant_data["businesses"]
 
     restaurant_nums = model.random_num(restaurants, int(days) * 3)

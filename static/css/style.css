@@ -75,11 +75,11 @@ input[type=submit]:hover{
 }
 
 .col-sm-4{
-    background-color: red;
+    background-color: pink;
 }
 
 .col-sm-8{
-    background-color: blue;
+    background-color: lavender;
 }
 
 /* .container{

@@ -17,27 +17,53 @@
             <!-- grid card start -->
             <div class="row row-cols-1 row-cols-md-3 g-4">
 
-                <% restaurant_counter = 0 %>
-                <% hotel_counter = 0 %>
-                <% thingsToDo_counter = 0 %>
+                {% set restaurant_counter = namespace(value=0) %}
+                {% set hotel_counter = namespace(value=0) %}
+                {% set thingstodo_counter = namespace(value=0) %}
 
-                <% for day in days: %>
+                {% for day in days %}
                 <indent>
-                    <% for number in range(3): %>
-                        <div class="col">
-                            <div class="card h-100">
-                                <img src='{{ restaurants[restaurant_counter]["picture"] }}' class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ restaurants[restaurant_counter]["name"] }}</h5>
-                                </div>
+                    {% for number in range(3) %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src='{{ restaurants[restaurant_counter.value]["picture"] }}' class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ restaurants[restaurant_counter.value]["name"] }}</h5>
                             </div>
                         </div>
-                    <% restaurant_counter += 1 %>
-                    <% end %>
+                    </div>
+                    {% set restaurant_counter.value = restaurant_counter.value + 1 %}
+                    {% endfor %}
                 </indent>
-                <% end %>
+                <indent>
+                    {% for number in range(2) %}
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src='{{ thingstodo[thingstodo_counter.value]["picture"] }}' class="card-img-top"
+                                alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ thingstodo[thingstodo_counter.value]["name"] }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    {% set thingstodo_counter.value = thingstodo_counter.value + 1 %}
+                    {% endfor %}
+                </indent>
 
                 <div class="col">
+                    <div class="card h-100">
+                        <img src='{{ hotels[hotel_counter.value]["picture"] }}' class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ hotels[hotel_counter.value]["name"] }}</h5>
+                        </div>
+                    </div>
+                </div>
+                {% set hotel_counter.value = hotel_counter.value + 1 %}
+                
+                {% endfor %} <!--days-->
+
+                <!-- <div class="col">
                     <div class="card h-100">
                         <img src='{{ restaurants[0]["picture"] }}' class="card-img-top" alt="...">
                         <div class="card-body">
@@ -53,8 +79,8 @@
                             <p class="card-text">This is a short card.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col">
+                </div> -->
+                <!-- <div class="col">
                     <div class="card h-100">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -64,8 +90,8 @@
                                 additional content.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col">
+                </div> -->
+                <!-- <div class="col">
                     <div class="card h-100">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
@@ -75,7 +101,7 @@
                                 additional content. This content is a little bit longer.</p>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!--end div class row row etc.-->
         </div>

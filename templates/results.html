@@ -4,107 +4,159 @@
 <head>
     <title>Results</title>
     <link rel="stylesheet" type="text/css" href="static/css/style.css?q={{ time }}" />
-    <style>
-        #map {
-            margin-left: 20%;
-            height: 500px;
-            width: 50%;
-        }
-    </style>
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 </head>
 
 <body>
+
+    <!-- columns -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8">col-sm-8
+                <!-- grid card start -->
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src='{{ restaurants[0]["picture"] }}' class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ restaurants[0]["name"] }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a short card.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a longer card with supporting text below as a natural
+                                    lead-in to
+                                    additional content. This content is a little bit longer.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">col-sm-4
+                <!-- map start -->
+                <div id="map"></div>
+
+                <script>
+                    function initMap() {
+                        let restaurants = JSON.parse('{{ restaurants | tojson }}');
+                        let hotels = JSON.parse('{{ hotels | tojson }}');
+                        let thingstodo = JSON.parse('{{ thingstodo | tojson }}');
+                        var center = { lat: restaurants[0]["coordinates"]["latitude"], lng: restaurants[0]["coordinates"]["longitude"] };
+
+                        var map = new google.maps.Map(document.getElementById("map"), {
+                            zoom: 10,
+                            center: center
+                        });
+
+                        var infowindow = new google.maps.InfoWindow({});
+                        var marker, count;
+
+                        // restaurants
+                        for (count = 0; count < restaurants.length; count++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(restaurants[count]["coordinates"]["latitude"], restaurants[count]["coordinates"]["longitude"]),
+                                map: map,
+                                title: restaurants[count]["name"],
+                                icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                            });
+
+                            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+                                return function () {
+                                    infowindow.setContent(restaurants[count]["name"]);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, count));
+                        }
+
+                        // hotels
+                        for (count = 0; count < hotels.length; count++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(hotels[count]["coordinates"]["latitude"], hotels[count]["coordinates"]["longitude"]),
+                                map: map,
+                                title: hotels[count]["name"],
+                                icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                            });
+
+                            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+                                return function () {
+                                    infowindow.setContent(hotels[count]["name"]);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, count));
+                        }
+
+                        // thingstodo
+                        for (count = 0; count < thingstodo.length; count++) {
+                            marker = new google.maps.Marker({
+                                position: new google.maps.LatLng(thingstodo[count]["coordinates"]["latitude"], thingstodo[count]["coordinates"]["longitude"]),
+                                map: map,
+                                title: thingstodo[count]["name"],
+                                icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                            });
+
+                            google.maps.event.addListener(marker, 'click', (function (marker, count) {
+                                return function () {
+                                    infowindow.setContent(thingstodo[count]["name"]);
+                                    infowindow.open(map, marker);
+                                }
+                            })(marker, count));
+                        }
+                    }
+
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_key }}&callback=initMap">
+                </script>
+            </div>
+        </div>
+    </div>
+
+    <!-- list -->
     <h1>Data!</h1>
-    <h2 id = "restHeader">Restaurants</h2>
+    <h2 id="restHeader">Restaurants</h2>
     <ul>
         {% for biz in restaurants %}
         <li>{{ biz["name"] }}</li>
         {% endfor %}
     </ul>
-    <h2 id = "hotelsHeader">Hotels</h2>
+    <h2 id="hotelsHeader">Hotels</h2>
     <ul>
         {% for biz in hotels %}
         <li>{{ biz["name"] }}</li>
         {% endfor %}
     </ul>
-    <h2 id = "thingsHeader">Things To Do</h2>
+    <h2 id="thingsHeader">Things To Do</h2>
     <ul>
         {% for biz in thingstodo %}
         <li>{{ biz["name"] }}</li>
         {% endfor %}
     </ul>
-    <div id="map"></div>
 
-    <script>
-        function initMap() {
-            let restaurants = JSON.parse('{{ restaurants | tojson }}');
-            let hotels = JSON.parse('{{ hotels | tojson }}');
-            let thingstodo = JSON.parse('{{ thingstodo | tojson }}');
-            var center = { lat: restaurants[0]["coordinates"]["latitude"], lng: restaurants[0]["coordinates"]["longitude"] };
-
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 10,
-                center: center
-            });
-
-            var infowindow = new google.maps.InfoWindow({});
-            var marker, count;
-
-            // restaurants
-            for (count = 0; count < restaurants.length; count++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(restaurants[count]["coordinates"]["latitude"], restaurants[count]["coordinates"]["longitude"]),
-                    map: map,
-                    title: restaurants[count]["name"],
-                    icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, count) {
-                    return function () {
-                        infowindow.setContent(restaurants[count]["name"]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, count));
-            }
-
-            // hotels
-            for (count = 0; count < hotels.length; count++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(hotels[count]["coordinates"]["latitude"], hotels[count]["coordinates"]["longitude"]),
-                    map: map,
-                    title: hotels[count]["name"],
-                    icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, count) {
-                    return function () {
-                        infowindow.setContent(hotels[count]["name"]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, count));
-            }
-
-            // thingstodo
-            for (count = 0; count < thingstodo.length; count++) {
-                marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(thingstodo[count]["coordinates"]["latitude"], thingstodo[count]["coordinates"]["longitude"]),
-                    map: map,
-                    title: thingstodo[count]["name"],
-                    icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
-                });
-
-                google.maps.event.addListener(marker, 'click', (function (marker, count) {
-                    return function () {
-                        infowindow.setContent(thingstodo[count]["name"]);
-                        infowindow.open(map, marker);
-                    }
-                })(marker, count));
-            }
-        }
-
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_key }}&callback=initMap">
-    </script>
 </body>
 
 </html>

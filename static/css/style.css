@@ -1,3 +1,8 @@
+/* *{
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+}
+ */
 body {
     font-family: 'IBM Plex Sans', sans-serif;
 }
@@ -8,6 +13,12 @@ input{
 input:focus {
     outline: 0;
 }
+
+.welcome{
+    margin-top: 2%;
+    text-align: center;
+}
+
 .homeBg{
     background-image: url("/static/css/landingPageImg.jpeg");
     background-size: cover;
@@ -57,3 +68,21 @@ input[type=submit]:hover{
 #thingsHeader{
     color: #2EC4B6;
 }
+
+#map {
+    height: 500px;
+    width: 100%;
+}
+
+.col-sm-4{
+    background-color: red;
+}
+
+.col-sm-8{
+    background-color: blue;
+}
+
+/* .container{
+    margin-right: 0;
+    margin-left: 0;
+} */

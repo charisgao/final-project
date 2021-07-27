@@ -13,7 +13,7 @@
 
     <!-- columns -->
     <div class="row">
-        <div class="col-sm-8">col-sm-8
+        <div class="col-sm-8">
             <!-- grid card start -->
             <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -60,13 +60,14 @@
                     </div>
                 </div>
                 {% set hotel_counter.value = hotel_counter.value + 1 %}
-                
-                {% endfor %} <!--days-->
+
+                {% endfor %}
+                <!--days-->
             </div>
             <!--end div class row row etc.-->
         </div>
         <!--end div class col-sm-8-->
-        <div class="col-sm-4">col-sm-4
+        <div class="col-sm-4">
 
             <!-- map start -->
             <div id="map"></div>
@@ -92,7 +93,7 @@
                             position: new google.maps.LatLng(restaurants[count]["coordinates"]["latitude"], restaurants[count]["coordinates"]["longitude"]),
                             map: map,
                             title: restaurants[count]["name"],
-                            icon: "http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                            icon: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png"
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, count) {
@@ -109,7 +110,7 @@
                             position: new google.maps.LatLng(hotels[count]["coordinates"]["latitude"], hotels[count]["coordinates"]["longitude"]),
                             map: map,
                             title: hotels[count]["name"],
-                            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                            icon: "http://maps.google.com/mapfiles/ms/icons/ltblue-dot.png"
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, count) {
@@ -126,7 +127,7 @@
                             position: new google.maps.LatLng(thingstodo[count]["coordinates"]["latitude"], thingstodo[count]["coordinates"]["longitude"]),
                             map: map,
                             title: thingstodo[count]["name"],
-                            icon: "http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                            icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
                         });
 
                         google.maps.event.addListener(marker, 'click', (function (marker, count) {

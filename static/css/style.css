@@ -1,6 +1,6 @@
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    cursor: url("../static/images/cursor.png"), auto !important;
+    /* cursor: url("cursormap.png"), auto; */
 }
 
 #titlepic {

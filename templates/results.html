@@ -15,7 +15,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-8">
-
+                <div id="topspace"></div>
                 <!-- grid card start -->
                 {% set restaurant_counter = namespace(value=0) %}
                 {% set hotel_counter = namespace(value=0) %}
@@ -30,6 +30,7 @@
                             <img id="owncards" src='{{ restaurants[restaurant_counter.value]["picture"] }}' class="card-img-top"
                                 alt="...">
                             <div class="card-body">
+                                <p class="card-text">Restaurant:</p>
                                 <h5 class="card-title">{{ restaurants[restaurant_counter.value]["name"] }}</h5>
                             </div>
                         </div>
@@ -45,6 +46,7 @@
                             <img id="owncards" src='{{ thingstodo[thingstodo_counter.value]["picture"] }}' class="card-img-top"
                                 alt="...">
                             <div class="card-body">
+                                <p class="card-text">Attraction:</p>
                                 <h5 class="card-title">{{ thingstodo[thingstodo_counter.value]["name"] }}</h5>
                             </div>
                         </div>
@@ -55,6 +57,7 @@
                         <div class="card h-100">
                             <img id="owncards" src='{{ hotels[hotel_counter.value]["picture"] }}' class="card-img-top" alt="...">
                             <div class="card-body">
+                                <p class="card-text">Hotel:</p>
                                 <h5 class="card-title">{{ hotels[hotel_counter.value]["name"] }}</h5>
                             </div>
                         </div>

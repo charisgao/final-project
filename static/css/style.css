@@ -1,5 +1,6 @@
 body {
     font-family: 'IBM Plex Sans', sans-serif;
+    cursor: url("../static/css/cursor.png"), auto !important;
 }
 input{
     border: 0px solid;

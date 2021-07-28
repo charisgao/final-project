@@ -1,6 +1,6 @@
 body {
     font-family: 'IBM Plex Sans', sans-serif;
-    cursor: url("../static/css/cursor.png"), auto !important;
+    cursor: url("../static/images/cursor.png"), auto !important;
 }
 input{
     border: 0px solid;
@@ -8,11 +8,6 @@ input{
 }
 input:focus {
     outline: 0;
-}
-
-.welcome{
-    margin-top: 2%;
-    text-align: center;
 }
 
 .homeBg{
@@ -83,11 +78,19 @@ input[type=submit]:hover{
     background-color: lavender;
 }
 
-img {
+#owncards {
     display: inline-flex;
     width: auto;
     height: 150px;
     object-fit: cover;
+}
+
+#titlepic {
+    margin-top: 1%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 #restaurantrow{

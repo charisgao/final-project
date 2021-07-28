@@ -84,7 +84,9 @@ input[type=submit]:hover{
     object-fit: cover;
 }
 
-
+.card-title{
+    text-align: center;
+}
 
 #restaurantrow {
     margin-bottom: 2%;

@@ -12,14 +12,11 @@
 <body>
     <img id="titlepic" src="/static/title.png">
 
-    <p id="subtitletext">Planning a trip is hard. Venturely plans your trip for you by creating an itinerary that highlights top restaurants, attractions, and hotels in your destination city.</p>
-
-    <h2 class="testing123">
-        <p class="typewrite" data-period="2000"
-            data-type='["Travel effortlessly."]'>
+    <!-- <h2 class="testing123">
+        <p class="typewrite" data-period="2000" data-type='["Travel effortlessly."]'>
             <span class="wrap"></span>
         </p>
-    </h2>
+    </h2> -->
 
     <script>
         var TxtType = function (el, toRotate, period) {
@@ -80,7 +77,10 @@
         };
     </script>
 
-    <div class="homeBg"></div>
+    <div class="homeBg">
+        <h2 id = "slogan">Travel effortlessly </h2> 
+    </div>
+    
     <div class="holdForm">
         <form id="formContainer" method="post" action="/results">
             <input class="formInput" type="text" name="location" placeholder="Where to?" />
@@ -89,6 +89,10 @@
         </form>
     </div>
 
+    <p id="subtitletext">Planning a trip is hard. Venturely plans your trip for you by creating an itinerary that
+        highlights top restaurants, attractions, and hotels in your destination city.</p>
+
+    <!--carousel of popular destinations begins below-->
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-3"></div>

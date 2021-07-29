@@ -24,7 +24,11 @@ input {
 input:focus {
     outline: 0;
 }
-
+#slogan {
+    background-color: none;
+    display: flex;
+    justify-content: center;
+}
 .homeBg {
     background-image: url("/static/css/landingPageImg.jpg");
     background-size: cover;
@@ -40,7 +44,7 @@ input:focus {
     margin-right: 15%;
     margin-left: 15%;
     box-sizing: border-box;
-    margin-top: -19%;
+    margin-top: -9%;
     flex-wrap: wrap;
 }
 .formInput {
@@ -49,7 +53,7 @@ input:focus {
     padding: 0.5%;
 }
 input[type=submit] {
-    background-color: #4A8FE7;
+    background-color: #2EC4B6;
     border-radius: 30px;
     padding: 1%;
     transition: transform .2s;
@@ -59,7 +63,7 @@ input[type=submit]:hover{
 }
 .holdForm {
     background-color: #CBF3F0;
-    padding: 8%;
+    padding: 2%;
 }
 
 /* result.html style below */

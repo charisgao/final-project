@@ -15,13 +15,13 @@ body{
 }
 
 .col-sm-4 {
-    background-color: beige !important;
+    background-color: #EEFBFA !important;
     display: flex;
     justify-content: center;
 }
 
 .col-sm-8 {
-    background-color: beige !important;
+    background-color: #EEFBFA !important;
 }
 
 #owncards {
@@ -60,4 +60,8 @@ body{
 
 #topspace{
     margin-top: 2%;
+}
+
+#middlespace{
+    margin-top: 3%;
 }

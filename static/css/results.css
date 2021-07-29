@@ -31,8 +31,11 @@ body{
     object-fit: cover;
 }
 
-.card-title{
+.card-body{
     text-align: center !important;
+}
+
+.card-title{
     color: black !important;
     text-decoration: none !important;
     font-size: 1.3em;
@@ -48,14 +51,17 @@ body{
 
 #restauranttitle{
     color: #FF9F1C;
+    text-align: center;
 }
 
 #attractiontitle{
    color: #2EC4B6;
+   text-align: center;
 }
 
 #hoteltitle{
     color: #4A8FE7;
+    text-align: center;
 }
 
 #topspace{

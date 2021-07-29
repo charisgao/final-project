@@ -30,7 +30,7 @@
                             <img id="owncards" src='{{ restaurants[restaurant_counter.value]["picture"] }}' class="card-img-top"
                                 alt="...">
                             <div class="card-body">
-                                <p class="card-text">Restaurant:</p>
+                                <p class="card-text" id="restauranttitle">Restaurant:</p>
                                 <h5 class="card-title">{{ restaurants[restaurant_counter.value]["name"] }}</h5>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                             <img id="owncards" src='{{ thingstodo[thingstodo_counter.value]["picture"] }}' class="card-img-top"
                                 alt="...">
                             <div class="card-body">
-                                <p class="card-text">Attraction:</p>
+                                <p class="card-text" id="attractiontitle">Attraction:</p>
                                 <h5 class="card-title">{{ thingstodo[thingstodo_counter.value]["name"] }}</h5>
                             </div>
                         </div>
@@ -57,7 +57,7 @@
                         <div class="card h-100">
                             <img id="owncards" src='{{ hotels[hotel_counter.value]["picture"] }}' class="card-img-top" alt="...">
                             <div class="card-body">
-                                <p class="card-text">Hotel:</p>
+                                <p class="card-text" id="hoteltitle">Hotel:</p>
                                 <h5 class="card-title">{{ hotels[hotel_counter.value]["name"] }}</h5>
                             </div>
                         </div>

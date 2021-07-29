@@ -126,3 +126,19 @@ input[type=submit]:hover{
 body{
   text-decoration: none !important;
 }
+
+#restauranttitle{
+    color: #FF9F1C;
+}
+
+#attractiontitle{
+   color: #2EC4B6;
+}
+
+#hoteltitle{
+    color: #4A8FE7;
+}
+
+#topspace{
+    margin-top: 2%;
+}

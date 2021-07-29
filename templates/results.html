@@ -31,7 +31,7 @@
                                 alt="...">
                             <div class="card-body">
                                 <p class="card-text" id="restauranttitle">Restaurant:</p>
-                                <h5 class="card-title">{{ restaurants[restaurant_counter.value]["name"] }}</h5>
+                                <a href='{{ restaurants[restaurant_counter.value]["urllink"] }}' target="_blank" class="card-title">{{ restaurants[restaurant_counter.value]["name"] }}</a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                                 alt="...">
                             <div class="card-body">
                                 <p class="card-text" id="attractiontitle">Attraction:</p>
-                                <h5 class="card-title">{{ thingstodo[thingstodo_counter.value]["name"] }}</h5>
+                                <a href='{{ thingstodo[thingstodo_counter.value]["urllink"] }}' target="_blank" class="card-title">{{ thingstodo[thingstodo_counter.value]["name"] }}</a>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                             <img id="owncards" src='{{ hotels[hotel_counter.value]["picture"] }}' class="card-img-top" alt="...">
                             <div class="card-body">
                                 <p class="card-text" id="hoteltitle">Hotel:</p>
-                                <h5 class="card-title">{{ hotels[hotel_counter.value]["name"] }}</h5>
+                                <a href='{{ hotels[hotel_counter.value]["urllink"] }}' target="_blank" class="card-title">{{ hotels[hotel_counter.value]["name"] }}</a>
                             </div>
                         </div>
                     </div>

@@ -46,6 +46,7 @@ def results():
             restaurant_list.append(
                 {
                     "name": model.name(restaurants, restaurant_nums[number]),
+                    "urllink": model.urllink(restaurants, restaurant_nums[number]),
                     "picture": model.picture(restaurants, restaurant_nums[number]),
                     "coordinates": model.coordinates(restaurants, restaurant_nums[number])
                 }
@@ -65,6 +66,7 @@ def results():
             hotel_list.append(
                 {
                     "name": model.name(hotels, hotel_nums[number]),
+                    "urllink": model.urllink(hotels, hotel_nums[number]),
                     "picture": model.picture(hotels, hotel_nums[number]),
                     "coordinates": model.coordinates(hotels, hotel_nums[number])
                 }
@@ -84,6 +86,7 @@ def results():
             thingstodo_list.append(
                 {
                     "name": model.name(thingstodo, thingstodo_nums[number]),
+                    "urllink": model.urllink(thingstodo, thingstodo_nums[number]),
                     "picture": model.picture(thingstodo, thingstodo_nums[number]),
                     "coordinates": model.coordinates(thingstodo, thingstodo_nums[number])
                 }

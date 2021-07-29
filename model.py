@@ -6,6 +6,9 @@ def random_num(data, days):
 def name(data, num):
     return data[num]["name"]
 
+def urllink(data, num):
+    return data[num]["url"]
+
 def picture(data, num):
     return data[num]["image_url"]
 

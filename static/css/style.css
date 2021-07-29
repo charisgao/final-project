@@ -100,7 +100,10 @@ input[type=submit]:hover{
 }
 
 .card-title{
-    text-align: center;
+    text-align: center !important;
+    color: black !important;
+    text-decoration: none !important;
+    font-size: 1.3em;
 }
 
 #restaurantrow {

@@ -21,14 +21,17 @@ input {
     border: 0px solid;
     border-bottom: 1px solid lightgrey;
 }
+
 input:focus {
     outline: 0;
 }
+
 #slogan {
     background-color: none;
     display: flex;
     justify-content: center;
 }
+
 .homeBg {
     background-image: url("/static/css/landingPageImg.jpg");
     background-size: cover;
@@ -36,6 +39,7 @@ input:focus {
     height: 100%;
     /* margin-bottom: 2%; */
 }
+
 #formContainer {
     background-color: white;
     display: flex;
@@ -47,34 +51,29 @@ input:focus {
     margin-top: -9%;
     flex-wrap: wrap;
 }
+
 .formInput {
     margin-right: 5%;
     margin-left: 7%;
     padding: 0.5%;
 }
+
 input[type=submit] {
     background-color: #2EC4B6;
     border-radius: 30px;
     padding: 1%;
     transition: transform .2s;
 }
+
 input[type=submit]:hover{
     transform: scale(1.1);
 }
+
 .holdForm {
     background-color: #CBF3F0;
     padding: 2%;
 }
 
-/* result.html style below */
-
-#map {
-    height: 90%;
-    width: 31.6%;
-    position: fixed !important;
-    margin-top: 2.7%;
-    margin-bottom: 2.5%;
-}
 .col-sm-3 {
     background-color: #CBF3F0;
 }
@@ -91,38 +90,6 @@ input[type=submit]:hover{
     margin-bottom: 5%;
 }
 
-.col-sm-4 {
-    background-color: beige !important;
-    display: flex;
-    justify-content: center;
-}
-
-.col-sm-8 {
-    background-color: beige !important;
-}
-
-#owncards {
-    display: inline-flex;
-    width: auto;
-    height: 150px;
-    object-fit: cover;
-}
-
-.card-title{
-    text-align: center !important;
-    color: black !important;
-    text-decoration: none !important;
-    font-size: 1.3em;
-}
-
-#restaurantrow {
-    margin-bottom: 2%;
-}
-
-#attractionrow {
-    margin-bottom: 10%;
-}
-
 .w-100 {
   width: 50% !important;
   height: 70vh;
@@ -130,30 +97,4 @@ input[type=submit]:hover{
 
 .entirething{
     width: 100%;
-}
-
-
-.testing123 {
-  text-align: center;
-  color: black !important;
-  padding-top:0.25em;
-}
-body{
-  text-decoration: none !important;
-}
-
-#restauranttitle{
-    color: #FF9F1C;
-}
-
-#attractiontitle{
-   color: #2EC4B6;
-}
-
-#hoteltitle{
-    color: #4A8FE7;
-}
-
-#topspace{
-    margin-top: 2%;
 }

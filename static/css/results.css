@@ -1,0 +1,63 @@
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+body{
+  text-decoration: none !important;
+}
+
+#map {
+    height: 90%;
+    width: 31.6%;
+    position: fixed !important;
+    margin-top: 2.7%;
+    margin-bottom: 2.5%;
+}
+
+.col-sm-4 {
+    background-color: beige !important;
+    display: flex;
+    justify-content: center;
+}
+
+.col-sm-8 {
+    background-color: beige !important;
+}
+
+#owncards {
+    display: inline-flex;
+    width: auto;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-title{
+    text-align: center !important;
+    color: black !important;
+    text-decoration: none !important;
+    font-size: 1.3em;
+}
+
+#restaurantrow {
+    margin-bottom: 2%;
+}
+
+#attractionrow {
+    margin-bottom: 10%;
+}
+
+#restauranttitle{
+    color: #FF9F1C;
+}
+
+#attractiontitle{
+   color: #2EC4B6;
+}
+
+#hoteltitle{
+    color: #4A8FE7;
+}
+
+#topspace{
+    margin-top: 2%;
+}
